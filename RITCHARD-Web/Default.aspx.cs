@@ -66,7 +66,7 @@ namespace RITCHARD_Web
                             data[3] += ", ";
                         }
 
-                        data[3] += posDef.PartOfSpeechDefinition.String;
+                        data[3] += posDef.PartOfSpeechString;
                     }
                 }
                 else
