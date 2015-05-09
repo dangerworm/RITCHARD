@@ -39,8 +39,6 @@ namespace RITCHARD_Processing
             }
         }
 
-        
-
         public void DisposeOfDictionaryEntries()
         {
             if (dictionaryEntries != null)

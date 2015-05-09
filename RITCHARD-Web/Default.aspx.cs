@@ -75,8 +75,6 @@ namespace RITCHARD_Web
                     data[3] = "";
                 }
 
-                
-
                 dt.Rows.Add(data);
             }
 

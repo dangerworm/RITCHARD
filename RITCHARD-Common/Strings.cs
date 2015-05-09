@@ -17,7 +17,7 @@ namespace RITCHARD_Common
         public static string PageMapDictionarySingularFromPlural = "DictionarySingularFromPlural";
 
         public static string PageMapDictionaryPartOfSpeechStopCharacters = ",(";
-        public static string PageMapDictionaryPartOfSpeechIgnoreList = "Idioms,Verb phrases";
+        public static string PageMapDictionaryPartOfSpeechIgnoreList = "Idioms,Verb phrases,Symbol.,Mathematics";
 
         public static string PageMapThesaurusAntonym = "ThesaurusAntonym";
         public static string PageMapThesaurusSynonym = "ThesaurusSynonym";

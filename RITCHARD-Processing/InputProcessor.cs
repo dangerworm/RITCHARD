@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 using RITCHARD_Common;
@@ -103,6 +104,7 @@ namespace RITCHARD_Processing
                 }
             }
 
+            ProcessQueue();
             CorrectSpellings();
             GetPartsOfSpeech();
 
@@ -282,6 +284,21 @@ namespace RITCHARD_Processing
             return words;
         }
 
+        public void ProcessQueue()
+        {
+            var currentEntries = queue.GetDictionaryEntries().Where(q => q.Status != WordLookup.PROCESSING && q.Status != WordLookup.FAILED);
+
+            while (currentEntries.Count() > 0)
+            {
+                foreach (DictionaryEntry de in currentEntries)
+                {
+                    de.CheckTimeout();
+                }
+
+                Thread.Sleep(200);
+            }
+        }
+
         public void CorrectSpellings()
         {
             /*
@@ -330,6 +347,13 @@ namespace RITCHARD_Processing
                     if (partsOfSpeech.Count > 0)
                     {
                         Definition def = RitchardDataHelper.GetDefinitionCaseSensitive(entry.Query);
+
+                        if (def == null)
+                        {
+                            def = new Definition(Guids.EnglishLanguage, entry.Query);
+                            _db.Definitions.InsertOnSubmit(def);
+                            _db.SubmitChanges();
+                        }
 
                         foreach (string part in partsOfSpeech)
                         {

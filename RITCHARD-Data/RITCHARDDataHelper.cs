@@ -43,7 +43,8 @@ namespace RITCHARD_Data
 
             if (definitions.Count == 0)
             {
-                throw new Exception("There are no definitions in the database with this. Is it even a word?");
+                // We have never seen this word before. Return null so that the InputProcessor knows to go and look for it.
+                return null;
             }
             if (definitions.Count == 1)
             {
