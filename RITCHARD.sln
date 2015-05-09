@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RITCHARD-Common", "RITCHARD-Common\RITCHARD-Common.csproj", "{1C9EC348-D1D6-461C-9A39-37043BBB16CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RITCHARD-Data", "RITCHARD-Data\RITCHARD-Data.csproj", "{250A087C-AF6B-419C-977B-EDBC6F7DE442}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RITCHARD-Windows", "RITCHARD-Prototype\RITCHARD-Windows.csproj", "{D8431876-0415-44E5-ADE3-58F14ACB7016}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RITCHARD-Web", "RITCHARD-Web\RITCHARD-Web.csproj", "{B2304841-6458-4A56-8B81-E91823645823}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RITCHARD-Processing", "RITCHARD-Processing\RITCHARD-Processing.csproj", "{0A13CA8A-7295-43C0-A256-3EF21B88FCA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PageMapper", "..\PageMapper\PageMapper\PageMapper.csproj", "{3235C1E1-9BDA-4826-A01E-178F7733F5B8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1C9EC348-D1D6-461C-9A39-37043BBB16CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9EC348-D1D6-461C-9A39-37043BBB16CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9EC348-D1D6-461C-9A39-37043BBB16CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9EC348-D1D6-461C-9A39-37043BBB16CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{250A087C-AF6B-419C-977B-EDBC6F7DE442}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{250A087C-AF6B-419C-977B-EDBC6F7DE442}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{250A087C-AF6B-419C-977B-EDBC6F7DE442}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{250A087C-AF6B-419C-977B-EDBC6F7DE442}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8431876-0415-44E5-ADE3-58F14ACB7016}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8431876-0415-44E5-ADE3-58F14ACB7016}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8431876-0415-44E5-ADE3-58F14ACB7016}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8431876-0415-44E5-ADE3-58F14ACB7016}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2304841-6458-4A56-8B81-E91823645823}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2304841-6458-4A56-8B81-E91823645823}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2304841-6458-4A56-8B81-E91823645823}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2304841-6458-4A56-8B81-E91823645823}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A13CA8A-7295-43C0-A256-3EF21B88FCA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A13CA8A-7295-43C0-A256-3EF21B88FCA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A13CA8A-7295-43C0-A256-3EF21B88FCA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A13CA8A-7295-43C0-A256-3EF21B88FCA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3235C1E1-9BDA-4826-A01E-178F7733F5B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3235C1E1-9BDA-4826-A01E-178F7733F5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3235C1E1-9BDA-4826-A01E-178F7733F5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3235C1E1-9BDA-4826-A01E-178F7733F5B8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Data.6.0.1304.0\lib\NET45
+	EndGlobalSection
+EndGlobal

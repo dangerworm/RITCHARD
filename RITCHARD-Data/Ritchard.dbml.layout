@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 13" name="Ritchard">
+  <DataContextMoniker Name="/RitchardDataContext" />
+  <nestedChildShapes>
+    <classShape Id="7911332d-4909-48cb-939c-189b3837762d" absoluteBounds="3.5, 9.375, 2, 2.9247054036458344">
+      <DataClassMoniker Name="/RitchardDataContext/Concept" />
+      <nestedChildShapes>
+        <elementListCompartment Id="fb7b60b0-7755-4e9d-b4e8-333d8cf50e7b" absoluteBounds="3.515, 9.835, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9764107e-7fcd-4d50-bb5d-13fb751caaef" absoluteBounds="6.75, 0.75, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/RitchardDataContext/Statistic" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5b81a4bd-3654-4d0a-a0b7-be522da3e6a9" absoluteBounds="6.765, 1.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d31489b1-21a3-4cc8-9aa0-c44a2dc12b53" absoluteBounds="3.5, 5.875, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/RitchardDataContext/Conjugation" />
+      <nestedChildShapes>
+        <elementListCompartment Id="59085322-9d5f-4bb3-bcd4-84573a879b2d" absoluteBounds="3.515, 6.335, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e41969d5-0305-430e-8201-8b3820a7fa27" absoluteBounds="3.5, 1.375, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/RitchardDataContext/CorrectedSpelling" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6736e0df-b030-4611-a822-5a6593c84c31" absoluteBounds="3.515, 1.835, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="e90c033a-e9d5-4dc6-bf8c-c6eaf025d2f7" absoluteBounds="0.75, 5.625, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/RitchardDataContext/Definition" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8e150b06-10ca-4dfb-8e73-24c8af026be8" absoluteBounds="0.765, 6.085, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f07f1b4f-0c7a-4dc7-b3f3-4008d9c8d07e" absoluteBounds="3.5, 3.375, 2, 1.7708968098958327">
+      <DataClassMoniker Name="/RitchardDataContext/PartsOfSpeech" />
+      <nestedChildShapes>
+        <elementListCompartment Id="208190f9-3990-4243-a5c7-9a6e021b43e9" absoluteBounds="3.515, 3.835, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ad9f7454-8295-433e-a595-d2f61e5c14a8" absoluteBounds="6.25, 9, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/RitchardDataContext/Relationship" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3aaede7a-6154-4204-b4f9-f852344e50b0" absoluteBounds="6.265, 9.46, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.75 : 8.35740397135417); (1.75 : 10.8373527018229); (3.5 : 10.8373527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RitchardDataContext/Definition/Definition_Concept" />
+      <nodes>
+        <classShapeMoniker Id="e90c033a-e9d5-4dc6-bf8c-c6eaf025d2f7" />
+        <classShapeMoniker Id="7911332d-4909-48cb-939c-189b3837762d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.04890055338542); (3.5 : 7.04890055338542)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RitchardDataContext/Definition/Definition_Conjugation" />
+      <nodes>
+        <classShapeMoniker Id="e90c033a-e9d5-4dc6-bf8c-c6eaf025d2f7" />
+        <classShapeMoniker Id="d31489b1-21a3-4cc8-9aa0-c44a2dc12b53" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 5.625); (1.75 : 1.97199625651042); (3.5 : 1.97199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RitchardDataContext/Definition/Definition_CorrectedSpelling" />
+      <nodes>
+        <classShapeMoniker Id="e90c033a-e9d5-4dc6-bf8c-c6eaf025d2f7" />
+        <classShapeMoniker Id="e41969d5-0305-430e-8201-8b3820a7fa27" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.2812525 : 5.625); (2.2812525 : 4.26044840494792); (3.5 : 4.26044840494792)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RitchardDataContext/Definition/Definition_PartsOfSpeech" />
+      <nodes>
+        <classShapeMoniker Id="e90c033a-e9d5-4dc6-bf8c-c6eaf025d2f7" />
+        <classShapeMoniker Id="f07f1b4f-0c7a-4dc7-b3f3-4008d9c8d07e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.2187475 : 5.625); (1.2187475 : 4.73442510742187); (3.5 : 4.73442510742187)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RitchardDataContext/Definition/Definition_PartsOfSpeech1" />
+      <nodes>
+        <classShapeMoniker Id="e90c033a-e9d5-4dc6-bf8c-c6eaf025d2f7" />
+        <classShapeMoniker Id="f07f1b4f-0c7a-4dc7-b3f3-4008d9c8d07e" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.8373527018229); (6.25 : 10.8373527018229)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RitchardDataContext/Concept/Concept_Relationship" />
+      <nodes>
+        <classShapeMoniker Id="7911332d-4909-48cb-939c-189b3837762d" />
+        <classShapeMoniker Id="ad9f7454-8295-433e-a595-d2f61e5c14a8" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.0436763509115); (6.25 : 10.0436763509115)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/RitchardDataContext/Concept/Concept_Relationship1" />
+      <nodes>
+        <classShapeMoniker Id="7911332d-4909-48cb-939c-189b3837762d" />
+        <classShapeMoniker Id="ad9f7454-8295-433e-a595-d2f61e5c14a8" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

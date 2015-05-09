@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="RITCHARD" Class="RitchardDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=chomsky\sqlexpress;Initial Catalog=RITCHARD;User ID=sa" SettingsObjectName="RITCHARD_Data.Properties.Settings" SettingsPropertyName="RITCHARDConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Concepts" Member="Concepts">
+    <Type Name="Concept">
+      <Column Name="ConceptID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DefinitionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PartOfSpeechID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PropertyDefinitionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Bit" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="DateTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Geometry" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Location" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Money" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Number" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="String" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Concept_Relationship" Member="Relationships" ThisKey="ConceptID" OtherKey="Concept1ID" Type="Relationship" />
+      <Association Name="Concept_Relationship1" Member="Relationships1" ThisKey="ConceptID" OtherKey="Concept2ID" Type="Relationship" />
+      <Association Name="Definition_Concept" Member="Definition" ThisKey="DefinitionID" OtherKey="DefinitionID" Type="Definition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Statistics]" Member="Statistics">
+    <Type Name="Statistic">
+      <Column Name="RecordID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Type" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="TimesSeen" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Conjugations" Member="Conjugations">
+    <Type Name="Conjugation">
+      <Column Name="ConjugationID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="LanguageID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="InfinitiveDefinitionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Form" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Mood" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Person" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Tense" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="ConjugatedFormDefinitionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Definition_Conjugation" Member="Definition" ThisKey="ConjugatedFormDefinitionID" OtherKey="DefinitionID" Type="Definition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CorrectedSpellings" Member="CorrectedSpellings">
+    <Type Name="CorrectedSpelling">
+      <Column Name="OriginalSpelling" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="ResultingDefinition" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Definition_CorrectedSpelling" Member="Definition" ThisKey="ResultingDefinition" OtherKey="DefinitionID" Type="Definition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Definitions" Member="Definitions">
+    <Type Name="Definition">
+      <Column Name="DefinitionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="String" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="IsCapitalised" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="IsUsedAsPlural" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="HasPlural" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PluralStringDefID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="LanguageDefID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="IsResearched" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Definition_Concept" Member="Concepts" ThisKey="DefinitionID" OtherKey="DefinitionID" Type="Concept" />
+      <Association Name="Definition_Conjugation" Member="Conjugations" ThisKey="DefinitionID" OtherKey="ConjugatedFormDefinitionID" Type="Conjugation" />
+      <Association Name="Definition_CorrectedSpelling" Member="CorrectedSpellings" ThisKey="DefinitionID" OtherKey="ResultingDefinition" Type="CorrectedSpelling" />
+      <Association Name="Definition_PartsOfSpeech" Member="PartsOfSpeeches" ThisKey="DefinitionID" OtherKey="DefinitionID" Type="PartsOfSpeech" />
+      <Association Name="Definition_PartsOfSpeech1" Member="PartsOfSpeeches1" ThisKey="DefinitionID" OtherKey="PartOfSpeechDefID" Type="PartsOfSpeech" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PartsOfSpeech" Member="PartsOfSpeeches">
+    <Type Name="PartsOfSpeech">
+      <Column Name="PartOfSpeechID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DefinitionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="DefinitionString" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="PartOfSpeechDefID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PartOfSpeechString" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Definition_PartsOfSpeech" Member="Definition" ThisKey="DefinitionID" OtherKey="DefinitionID" Type="Definition" IsForeignKey="true" />
+      <Association Name="Definition_PartsOfSpeech1" Member="Definition1" ThisKey="PartOfSpeechDefID" OtherKey="DefinitionID" Type="Definition" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Relationships" Member="Relationships">
+    <Type Name="Relationship">
+      <Column Name="RelationshipID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Concept1DeterminerID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Concept1Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Concept1PartOfSpeechID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Concept1ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="VerbDefinitionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="AdpositionID" Type="System.Guid" DbType="UniqueIdentifier" CanBeNull="true" />
+      <Column Name="Concept2DeterminerID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Concept2Quantity" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Concept2PartOfSpeechID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="Concept2ID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="RelationshipStartTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="RelationshipEndTime" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TimeStored" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SourceDefinitionID" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Association Name="Concept_Relationship" Member="Concept" ThisKey="Concept1ID" OtherKey="ConceptID" Type="Concept" IsForeignKey="true" />
+      <Association Name="Concept_Relationship1" Member="Concept1" ThisKey="Concept2ID" OtherKey="ConceptID" Type="Concept" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
